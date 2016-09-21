@@ -1,0 +1,5 @@
+word_list <- readLines("words.txt")
+word_lens <- nchar(word_list)
+word_tbl  <- data.frame(table(word_lens))
+names(word_tbl) <- c("Length", "Freq")
+write.table(word_tbl, "histogram.tsv", sep = "\t", row.names = FALSE, quote = FALSE)
