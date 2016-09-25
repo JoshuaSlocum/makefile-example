@@ -1,0 +1,17 @@
+---
+title: "report"
+output: html_document
+---
+
+![Histogram of word lengths](histogram.png)
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+word_data <- read.delim("histogram.tsv")
+most_common_len <- word_data$Length[which.max(word_data$Freq)]
+```
+
+The most common word lengh is `r most_common_len` characters.
